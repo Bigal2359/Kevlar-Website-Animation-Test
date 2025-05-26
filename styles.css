@@ -1,0 +1,715 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(28,59,113);
+    color: #fff;
+    font-family: "roc-grotesk-wide", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    margin: 0px;
+}
+
+header {
+    background: rgb(9,55,192);
+    background: linear-gradient(172deg, #23437a 15%, #5375aa 85%);
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    transition: height 0.3s ease-in-out;
+    width: 100vw;
+    z-index: 1;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+
+}
+
+/* BODY COPY STYLES START  */
+
+h2 {
+    color: #ffb500;
+    font-size: clamp(14px, 7.2vw, 28px);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "roc-grotesk", sans-serif;
+    font-size: clamp(10px, 4.6vw, 18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+/* BODY COPY STYLES END */
+
+sup {
+    font-size: 0.4em;
+}
+
+section.intro {
+    margin-bottom: 500px;
+}
+
+.bkgd {
+    background: rgb(28,59,113);
+    background: linear-gradient(172deg, rgb(28,59,113) 15%, rgb(119,156,209) 85%);
+    background-size: 100%;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+}
+
+body.nav-toggle {
+    overflow: hidden;
+}
+
+.nav-toggle header {
+    height: 100vh;
+}
+
+.nav-toggle-ready header {
+    overflow-y: auto;   
+}
+
+.dupont-logo {
+    display: block;
+    margin: 83px 30px 1.5%;
+    max-width: 500px;
+    width: 80%;
+}
+
+.dupont-logo img {
+    transform: translateX(-13%);
+    width: 22%;
+}
+
+.kevlar-logo {
+    display: block;
+    margin: 0 30px 5px;
+    max-width: 500px;
+    width: 80%;
+}
+
+.kevlar-logo img {
+    width: 100%;
+}
+
+#dot {
+    background: #fff;
+    border-radius: 50%;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+}
+
+#introfigure {
+    left: 10%;
+    max-width: 1560px;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 388%;
+}
+
+#uielements {
+    height: 100vh;
+    padding: 50px;
+    width: 100vw;
+}
+
+.ui {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.navbtn {
+    background: none;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    height: 29px;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    transition: opacity 0.25s ease-in;
+    width: 29px;
+    z-index: 10;
+}
+
+.intro-ready .navbtn {
+    opacity: 1;
+}
+
+.navbtn::before {
+    background: #FFB500;
+    clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 38%, 80% 38%, 80% 45%, 20% 45%, 20% 55%, 80% 55%, 80% 62%, 20% 62%, 20% 100%, 100% 100%, 100% 0);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.nav-toggle .navbtn::before {
+    clip-path: polygon(0% 0%, 0 100%, 45% 50%, 25% 30%, 30% 25%, 50% 45%, 70% 25%, 75% 30%, 55% 50%, 75% 70%, 70% 75%, 50% 55%, 30% 75%, 25% 70%, 0% 100%, 100% 100%, 100% 0);
+}
+
+nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 5px;
+    padding: 28px 25px;
+}
+
+#menu {
+    align-items: center;
+    display: flex;
+    gap: 35px;
+    height: 48px;
+    right: 50px;
+    top: 50px;
+    width: 742px;
+    z-index: 10;
+}
+
+nav ul {
+    display: grid;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    position: relative;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+nav li::before,
+nav li::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    left: -20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    top: 0;
+}
+
+nav li::after {
+    left: -15px;
+}
+
+nav li:hover::before,
+nav li:hover::after,
+nav li.active::before,
+nav li.active::after {
+    opacity: 1;
+}
+
+.header-sec-menu {
+    padding: 45px 30px 0;
+    text-align: left;
+}
+
+.header-sec-menu h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.31px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.header-sec-menu ul {
+    list-style: none;
+    margin-bottom: 60px;
+    padding: 0;
+}
+
+.header-sec-menu li {
+    margin-bottom: 20px;
+}
+
+.header-sec-menu a {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.cta-ctn {
+    margin: 0 10px 40px;
+}
+
+#cta {
+    overflow: hidden;
+    position: relative;
+}
+
+#cta a {
+    background: #FFB500;
+    border-radius: 50px;
+    color: #2D2D2D;
+    display: inline-block;
+    font-size: 3vw;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 14px 65px 13px 20px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.ready #cta {
+    overflow: visible;
+    width: auto !important;
+}
+
+#cta a::before {
+    border-radius: 34px;
+    border: 1px dashed #fff;
+    content: '';
+    height: 100%;
+    left: 0;
+    margin: 0;
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: all 0.25s ease-in-out;
+}
+
+#cta a:hover::before {
+    margin: -9px;
+    opacity: 1;
+    padding: 9px;
+}
+
+#cta a span {
+    background: url('cta-arrow.png') no-repeat;
+    background-size: contain;
+    height: 20px;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 0.25s ease-in-out;
+    width: 36px;
+}
+
+#cta a:hover span {
+    right: 5px;
+}
+
+.content {
+    left: 0;
+    margin: auto;
+    max-width: 480px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+}
+
+#introtitle {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#fitfree {
+    font-size: 2.5vw;
+    letter-spacing: 0.3em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.fitfree {
+    font-size: clamp(10.8px, 2.6vw, 17px);
+    letter-spacing: 0.3em;
+    margin: 0 30px 43px;
+    text-transform: uppercase;
+}
+
+.fitfree span {
+    color: #FFB500;
+}
+
+.fit-free-ctn {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.fit-free-ctn span {
+    display: inline-block;
+}
+
+#fitsthebody {
+    color: #FFB500;
+}
+
+#introcopy {
+    color: #fff;
+    font-family: "roc-grotesk", sans-serif;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0;
+    position: relative;
+}
+
+#introcopy a {
+    border-bottom: 1px solid;
+    color: #FFB500;
+    text-decoration: none;
+}
+
+.introcopyctn,
+.introcopyctn span {
+    display: block;
+    overflow: hidden;
+}
+
+#madeusa {
+    background: url('usa-flag.svg') no-repeat 0 center;
+    background-size: 29px 16px;
+    font-size: clamp(5px, 2.29vw, 11px);
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 0 30px 40px;
+    padding: 1px 0 0 43px;
+    text-transform: uppercase;
+}
+
+#madeusa span {
+    white-space: nowrap;
+}
+
+#scrollicon {
+    bottom: 40px;
+    display: grid;
+    justify-items: center;
+    left: 0;
+    margin: auto;
+    right: 0;
+    row-gap: 15px;
+    width: 130px;
+}
+
+.ready.scroll-start #scrollicon {
+    opacity: 0 !important;
+    transition: opacity 1.0s;
+}
+
+#exploreexo {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#exploreexo span {
+    background: #ffb500;
+    color: #000;
+    display: inline-block;
+    padding: 2px 2px 0 5px;
+}
+
+#scrolliconarrow {
+    background: url('scroll-arrow.png');
+    background-size: cover;
+    height: 31px;
+    width: 24px;
+}
+
+#mesh {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#meshSky {
+    left: 0;
+    opacity: 0.9;
+    top: -25%;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (min-width: 390px) {
+
+    #cta a {
+        font-size: 3.47vw;
+    }
+
+    #introfigure {
+        top: -12%;
+    }
+}
+
+@media (min-width: 440px) {
+
+    .cta-ctn {
+        height: 44px;
+        margin: 0 30px 40px;
+        width: 393px;
+    }
+
+    #cta {
+        height: 44px;
+        width: 393px;
+    }
+
+    #cta a {
+        font-size: 14px;
+        height: 44px;
+        width: 393px;
+    }
+}
+
+@media (min-width: 600px) {
+
+    #fitfree {
+        font-size: clamp(15px, 1.8vw, 20px);
+        margin-bottom: 50px;
+    }
+
+    #introcopy {
+        font-size: clamp(22px, 2.8vw, 30px)
+    }
+}
+
+@media (min-width: 768px) {
+
+    #introfigure {
+        left: 50%;
+        max-width: 2200px;
+        top: -135px;
+    }
+
+    .content {
+        left: auto;
+        max-width: 796px;
+        right: auto;
+        text-align: left;
+        width: 60%;
+    }
+
+    section {
+        padding: 70px;
+    }
+
+    #introtitle {
+        margin: 0 0 30px -2.6%;
+    }
+}
+
+@media (min-width: 900px) {
+
+    /* BODY COPY STYLES START  */
+
+    h2 {
+        font-size: clamp(24px, 2.1vw, 36px);
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: clamp(15px, 1.8vw, 22px);
+    }
+
+    /* BODY COPY STYLES END  */
+}
+
+@media (min-width: 1024px) {
+
+    body.nav-toggle {
+        overflow: visible;
+    }
+
+    nav {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    
+    .intro-ready nav,
+    .intro-ready.is-intro #madeusa {
+        opacity: 1;
+    }
+
+    #introfigure {
+        left: 62%;
+        max-width: 2800px;
+        top: -180px;
+    }
+
+    .is-intro .dupont-logo,
+    .is-intro .kevlar-logo,
+    .is-intro .fitfree {
+        opacity: 0;
+        transition: visibility 0s linear 0.5s, opacity 0.25s ease-in;
+        visibility: hidden;
+    }
+
+    .dupont-logo,
+    .kevlar-logo,
+    .fitfree {
+        opacity: 1;
+        transition: visibility 0s, opacity 0.25s ease-in;
+        visibility: visible;
+    }
+
+    .dupont-logo {
+        bottom: 33px;
+        margin: 0;
+        position: fixed;
+        right: 50px;
+        width: auto;
+    }
+
+    .dupont-logo img {
+        transform: none;
+        width: 125px;
+    }
+
+    .fitfree {
+        bottom: 33px;
+        font-size: 14px;
+        left: 50px;
+        margin: 0;
+        position: fixed;
+    }
+
+    .navbtn {
+        display: none;
+    }
+
+    header,
+    .nav-toggle header {
+        background: none;
+        display: flex;
+        gap: 50px;
+        height: auto;
+        justify-content: end;
+        padding: 50px;
+    }
+
+    nav {
+        border: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul {
+        align-items: center;
+        display: flex;
+        gap: 42px;
+    }
+
+    nav li {
+        font-size: clamp(10px, 1vw, 14px);
+        padding-top: 3px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        width: min-content;
+    }
+
+    nav li::before {
+        border-radius: 34px !important;
+        border: 1px dashed #fff !important;
+        content: '';
+        height: 100% !important;
+        left: 0 !important;
+        margin: -5px -10px -3px;
+        right: 0;
+        opacity: 0;
+        padding: 5px 10px 3px;
+        position: absolute;
+        top: 0;
+        width: 100% !important;
+        transition: all 0.25s ease-in-out;
+    }
+
+    nav li:hover::before,
+    nav li.active::before {
+        content: '';
+        margin: -9px -20px -5px;
+        opacity: 1;
+        padding: 9px 20px 5px;
+        text-decoration: none;
+    }
+
+    nav li::after {
+        content: none;
+    }
+
+    .cta-ctn {
+        margin: 0;
+    }
+
+    .kevlar-logo {
+        align-items: center;
+        display: flex;
+        margin: 0;
+        max-width: 380px;
+        transform: none;
+        width: auto;
+    }
+
+    .header-sec-menu {
+        display: none;
+    }
+
+    #madeusa {
+        bottom: 33px;
+        margin: 0;
+        opacity: 0;
+        position: fixed;
+        right: 50px;
+        transition: opacity 0.5s;
+    }
+}
+
+@media (min-width: 1350px) {
+
+    .kevlar-logo {
+        left: 50px;
+        position: absolute;
+    }
+}
